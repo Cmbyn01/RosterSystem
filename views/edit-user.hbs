@@ -1,0 +1,51 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/">Performance Tech</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Edit</li>
+
+  </ol>
+</nav>
+
+{{#if alert}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{alert}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/if}}
+
+{{#each rows}}
+<form class="row g-3 needs-validation" method="POST" action="/edituser/{{this.Week_Number}}" novalidate>
+<div class="form-group">
+    <label for="exampleInputWeek1">Week Number</label>
+    <input type="text" class="form-control" id="floatingInput" value ="{{this.Week_Number}}" placeholder="Enter the Week Number" name="Week_Number">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputWeek2">Week Start date</label>
+    <input type="date" class="form-control" id="floatingInput" value ="{{this.Week_Date}}" placeholder="Enter the Week Start Date" name="Week_Date">
+  </div>
+<div class="form-group">
+    <label for="exampleInputName1">Primary On-Call</label>
+    <input type="text" class="form-control" id="floatingInput" value ="{{this.Primary_Oncall}}" placeholder="Enter the name of Primary On-Call" name="Primary_Oncall">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" value ="{{this.Email}}" placeholder="Enter email of Primary On-call" name="Email">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputName2">Secondary On-Call</label>
+    <input type="text" class="form-control" id="floatingInput" value ="{{this.Secondary_Oncall}}" placeholder="Enter the name of Secondary On-Call" name="Secondary_Oncall">
+  </div>
+
+   <div class="form-group">
+    <label for="exampleInputEmail2">Email address of Secondary On-Call</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" value ="{{this.Email_2}}"  placeholder="Enter email of Secondary On-call" name="Email_2">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+  
+</form>
+{{/each}}

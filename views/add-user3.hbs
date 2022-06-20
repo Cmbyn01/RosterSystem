@@ -1,0 +1,51 @@
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="/B2B">B2B</a></li>
+    <li class="breadcrumb-item active" aria-current="page">New User</li>
+  </ol>
+</nav>
+
+{{#if alert}}
+<div class="alert alert-success alert-dismissible fade show" role="alert">
+  {{alert}}
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+{{/if}}
+
+
+<form class="row g-3 needs-validation" method="POST" action="/adduser3" novalidate>
+
+<div class="form-group">
+    <label for="exampleInputName1">Week Number</label>
+    <input type="text" class="form-control" id="floatingInput" placeholder="Enter the Week Number" name="Week_Number">
+  </div>
+
+<div class="form-group">
+    <label for="exampleInputName1">Week Start Date</label>
+    <input type="date" class="form-control" id="floatingInput" placeholder="Enter the Week Start Date" name="Week_Date">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputName1">Primary On-Call</label>
+    <input type="text" class="form-control" id="floatingInput" placeholder="Enter the name of Primary On-Call" name="Primary_Oncall">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputEmail1">Email address</label>
+    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email of Primary On-call" name="Email">
+  </div>
+
+  <div class="form-group">
+    <label for="exampleInputName2">Secondary On-Call</label>
+    <input type="text" class="form-control" id="floatingInput" placeholder="Enter the name of Secondary On-Call" name="Secondary_Oncall">
+  </div>
+
+   <div class="form-group">
+    <label for="exampleInputEmail2">Email address of Secondary On-Call</label>
+    <input type="email" class="form-control" id="exampleInputEmail2" placeholder="Enter email of Secondary On-call" name="Email_2">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
